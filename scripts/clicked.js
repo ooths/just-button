@@ -49,6 +49,7 @@ const certainNumberAction = () => {
 	if (numberCount === 600) toolbox.classList.remove("hidden");
 };
 
+// Updates variables when button is clicked
 herold.addEventListener("click", function () {
 	if (isClickAllowed) {
 		updateCounter();
@@ -57,11 +58,40 @@ herold.addEventListener("click", function () {
 	}
 });
 
-// TEMPORARY
-document.addEventListener("keydown", function(event) {
-    if (event.key === "ArrowUp") {
-        numberCount += 100;
-        counter.innerHTML = numberCount;
-        certainNumberAction();
-    }
+// TEMPORARY ------------------------------------------------------------
+document.addEventListener("keydown", function (event) {
+	if (event.key === "ArrowUp") {
+		numberCount += 100;
+		counter.innerHTML = numberCount;
+		certainNumberAction();
+	}
+});
+
+document.addEventListener("keydown", function (event) {
+	if (event.key === "ArrowDown") {
+		numberCount -= 100;
+		counter.innerHTML = numberCount;
+		certainNumberAction();
+	}
+});
+
+let refreshKeybindAlt = false;
+let refreshKeybindS = false;
+
+document.addEventListener("keydown", function (event) {
+	if (event.key === "Alt") {
+		refreshKeybindAlt = true;
+	}
+	if (event.key === "s" && refreshKeybindAlt) {
+		location.reload();
+	}
+});
+
+document.addEventListener("keyup", function (event) {
+	if (event.key === "Alt") {
+		refreshKeybindAlt = false;
+	}
+	if (event.key === "s") {
+		refreshKeybindS = false;
+	}
 });
