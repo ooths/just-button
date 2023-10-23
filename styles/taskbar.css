@@ -1,87 +1,16 @@
-/* GLOBAL */
-*
-{
-    /* Position */
-    margin: 0;
-    padding: 0;
-
-    /* Font */
-    font-family: Montserrat, Sans-Serif;
-}
-
-/* TASKBAR */
 .taskbar
 {
-    /* Colour */
     background-color: #1C1C1E;
-
-    /* Position */
-    position: absolute;
-    top: calc(50% + 65px);
-    left: 50%;
-    transform: translateX(-50%);
-
-    /* Size */
-    height: 50px;
-    width: 300px;
-    border-radius: 25px;
-
-    /* Flex */
-    display: none;
-    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
     align-items: center;
     justify-content: space-around;
+    width: 350px;
+    height: 40px;
+    border-radius: 15px;
 }
 
-/* BUTTONS */
-.gridButton,
-.piechartButton,
-.blockButton
+.taskbar svg
 {
-    /* Position */
-    display: none;
-}
-
-.gridButton svg,
-.piechartButton svg,
-.blockButton svg
-{
-    /* Position */
-    vertical-align: middle;
-}
-
-/* HIDDEN CLASS */
-.hidden
-{
-    /* Position */
-    display: none;
-}
-
-/* HIDE BUTTON STYLES */
-.hideButtonStyles
-{
-    /* Colour */
-    background: none;
-    border: none;
-    outline: inherit;
-
-    /* Position */
-    padding: 0;
-    font: inherit;
-
-    /* Other */
-    cursor: pointer;
-}
-
-/* VISIBILITY CLASSES */
-.visibleBlock
-{
-    /* Position */
-    display: block !important;
-}
-
-.visibleFlex
-{
-    /* Position */
-    display: flex !important;
+    display: block;
 }

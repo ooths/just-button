@@ -1,0 +1,11 @@
+.toolbox
+{
+    width: 400px;
+    height: 40px;
+    background-color: #2C2C2E;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
