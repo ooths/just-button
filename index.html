@@ -25,19 +25,29 @@
 		<link
 			href="styles/toggleStyles.css"
 			rel="stylesheet" />
+		<link
+			href="styles/settings.css"
+			rel="stylesheet" />
 	</head>
 	<body>
-		<div class="container">
+		<div
+			class="settingsToggle"
+			id="settingsToggle">
+		</div>
+
+		<div
+			class="container"
+			id="container">
 			<!-- Chatbox -->
 			<div
-				class="chatboxContainer hidden"
+				class="chatboxContainer"
 				id="chatboxContainer">
 				<div
 					class="chatboxMessage"
 					id="chatboxMessage"></div>
 			</div>
 			<div
-				class="chatboxTriangle hidden"
+				class="chatboxTriangle"
 				id="chatboxTriangle">
 			</div>
 
@@ -116,6 +126,28 @@
 			</div>
 		</div>
 
+		<!-- Settings -->
+		<div
+			class="settings"
+			id="settings">
+			<h1 class="settingsTitle">Settings</h1>
+			<div
+				class="lightDarkContainer"
+				id="lightDarkContainer">
+				<div class="lightDarkLabel">Light / Dark Mode</div>
+				<div
+					class="lightDarkToggle"
+					id="lightDarkToggle">
+					<label class="toggle">
+						<input type="checkbox" />
+						<span class="slider round"></span>
+					</label>
+				</div>
+			</div>
+		</div>
+
 		<script src="scripts/clicked.js"></script>
+		<script src="scripts/keybinds.js"></script>
+		<script src="scripts/toolbox.js"></script>
 	</body>
 </html>

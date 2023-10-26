@@ -16,7 +16,7 @@ const toolbox = document.getElementById("toolbox");
 const messages = {
 	500: "Oof.",
 	510: "So much button pressing.",
-	520: "Holy shit, I can talk.",
+	520: "Holy smokes, I can talk.",
 	530: "I can dance!",
 	540: "Okay. maybe I can't dance.",
 	550: "I wonder what those symbols are.",
@@ -24,8 +24,10 @@ const messages = {
 	570: "Wait.",
 	580: "Let me try something.",
 	590: "Here we go.",
-	600: "What the fuck?",
+	600: "What the hell?",
 };
+
+chatboxMessage.innerHTML = "Double click the top of the screen.";
 
 // Updates numberCount every time button is clicked
 const updateCounter = () => {
@@ -38,15 +40,19 @@ const certainNumberAction = () => {
 	if (numberCount in messages) {
 		chatboxMessage.innerHTML = messages[numberCount];
 	}
-	if (numberCount === 100) taskbar.classList.remove("hidden");
-	if (numberCount === 200) gridButton.classList.remove("hidden");
-	if (numberCount === 300) piechartButton.classList.remove("hidden");
-	if (numberCount === 400) blockButton.classList.remove("hidden");
-	if (numberCount === 500) {
+	if (numberCount === 1) {
+		chatboxContainer.classList.add("hidden");
+		chatboxTriangle.classList.add("hidden");
+	}
+	if (numberCount >= 100) taskbar.classList.remove("hidden");
+	if (numberCount >= 200) gridButton.classList.remove("hidden");
+	if (numberCount >= 300) piechartButton.classList.remove("hidden");
+	if (numberCount >= 400) blockButton.classList.remove("hidden");
+	if (numberCount >= 500) {
 		chatboxContainer.classList.remove("hidden");
 		chatboxTriangle.classList.remove("hidden");
 	}
-	if (numberCount === 600) toolbox.classList.remove("hidden");
+	if (numberCount >= 600) toolbox.classList.remove("hidden");
 };
 
 // Updates variables when button is clicked
@@ -55,43 +61,5 @@ herold.addEventListener("click", function () {
 		updateCounter();
 		certainNumberAction();
 		setTimeout(() => (isClickAllowed = true), 150);
-	}
-});
-
-// TEMPORARY ------------------------------------------------------------
-document.addEventListener("keydown", function (event) {
-	if (event.key === "ArrowUp") {
-		numberCount += 100;
-		counter.innerHTML = numberCount;
-		certainNumberAction();
-	}
-});
-
-document.addEventListener("keydown", function (event) {
-	if (event.key === "ArrowDown") {
-		numberCount -= 100;
-		counter.innerHTML = numberCount;
-		certainNumberAction();
-	}
-});
-
-let refreshKeybindAlt = false;
-let refreshKeybindS = false;
-
-document.addEventListener("keydown", function (event) {
-	if (event.key === "Alt") {
-		refreshKeybindAlt = true;
-	}
-	if (event.key === "s" && refreshKeybindAlt) {
-		location.reload();
-	}
-});
-
-document.addEventListener("keyup", function (event) {
-	if (event.key === "Alt") {
-		refreshKeybindAlt = false;
-	}
-	if (event.key === "s") {
-		refreshKeybindS = false;
 	}
 });

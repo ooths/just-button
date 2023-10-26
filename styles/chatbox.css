@@ -27,4 +27,6 @@
     overflow: hidden;
     word-break: break-word;
     padding: 15px;
+    text-align: justify;
+    font-size: 15px;
 }
