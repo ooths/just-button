@@ -1,6 +1,3 @@
-// Variables
-numberCount = window.numberCount; // Number count = NC
-
 // Elements
 const settingsToggle = document.getElementById("settingsToggle");
 const settings = document.getElementById("settings");
@@ -8,7 +5,7 @@ const settings = document.getElementById("settings");
 // Up arrow keybind
 document.addEventListener("keydown", function (event) {
 	if (event.key === "ArrowUp") {
-		numberCount += 25;
+		window.numberCount += 25;
 		updateGame();
 	}
 });
@@ -16,7 +13,7 @@ document.addEventListener("keydown", function (event) {
 // Down arrow keybind
 document.addEventListener("keydown", function (event) {
 	if (event.key === "ArrowDown") {
-		numberCount -= 25;
+		window.numberCount -= 25;
 		updateGame();
 	}
 });

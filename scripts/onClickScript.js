@@ -29,14 +29,14 @@ const messages = {
 };
 
 // Chatbox message at beginning of game
-if (numberCount === 0) {
+if (window.numberCount === 0) {
 	chatboxMessage.innerHTML = "Double click the top of the screen.";
 }
 
 // Updates number count every time button is clicked
 function updateCounter() {
-	numberCount++;
-	counter.innerHTML = numberCount;
+	window.numberCount++;
+	counter.innerHTML = window.numberCount;
 }
 
 // Removes chatbox and clears message after first click
@@ -50,7 +50,7 @@ function firstNC() {
 function chatboxMessageControl() {
 	let lastKey = null;
 	for (const key in messages) {
-		if (numberCount >= key) {
+		if (window.numberCount >= key) {
 			lastKey = key;
 		}
 	}
@@ -61,47 +61,64 @@ function chatboxMessageControl() {
 
 // Updates the interface depending on the number count
 function interfaceControl() {
-	if (numberCount >= 100) taskbar.classList.remove("hidden");
-	if (numberCount >= 200) gridButton.classList.remove("hidden");
-	if (numberCount >= 300) piechartButton.classList.remove("hidden");
-	if (numberCount >= 400) blockButton.classList.remove("hidden");
-	if (numberCount >= 500) {
+	if (window.numberCount >= 100) taskbar.classList.remove("hidden");
+	if (window.numberCount >= 200) gridButton.classList.remove("hidden");
+	if (window.numberCount >= 300) piechartButton.classList.remove("hidden");
+	if (window.numberCount >= 400) blockButton.classList.remove("hidden");
+	if (window.numberCount >= 500) {
 		chatboxContainer.classList.remove("hidden");
 		chatboxTriangle.classList.remove("hidden");
 	}
-	if (numberCount >= 600) toolbox.classList.remove("hidden");
+	if (window.numberCount >= 600) toolbox.classList.remove("hidden");
 }
 
 // Runs functions for button click
 herold.addEventListener("click", function () {
+	console.log("%cButton clicked.", "color:red;");
 	// Removes chatbox and clears message after first click
-	if (numberCount === 0) {
+	if (window.numberCount === 0) {
 		firstNC();
+		console.log(
+			"%c    Removed chatbox and cleared message.",
+			"color:rgba(255, 0, 0, 0.5);",
+		);
 	}
 
 	// Updates number count every time button is clicked
 	updateCounter();
+	console.log("%c    Updated number count.", "color:rgba(255, 0, 0, 0.5);");
 
 	// Updates the chatbox message depending on the number count
 	chatboxMessageControl();
+	console.log("%c    Updated chatbox message.", "color:rgba(255, 0, 0, 0.5);");
 
 	// Updates the interface depending on the number count
 	interfaceControl();
+	console.log("%c    Updated interface.", "color:rgba(255, 0, 0, 0.5);");
 });
 
 // Runs functions for keybinds
 function updateGame() {
-	// Removes chatbox and clears message after first click
-	if (numberCount === 0) {
-		firstNC();
-	}
+	console.log("%cKeybinds used.", "color:red;");
 
 	// Updates html every time button is clicked
-	counter.innerHTML = numberCount;
+	counter.innerHTML = window.numberCount;
+	console.log("%c    Updated number count.", "color:rgba(255, 0, 0, 0.5);");
 
 	// Updates the chatbox message depending on the number count
 	chatboxMessageControl();
+	console.log("%c    Updated chatbox message.", "color:rgba(255, 0, 0, 0.5);");
 
 	// Updates the interface depending on the number count
 	interfaceControl();
+	console.log("%c    Updated interface.", "color:rgba(255, 0, 0, 0.5);");
+
+	// Removes chatbox and clears message after first click
+	if (window.numberCount >= 0) {
+		firstNC();
+		console.log(
+			"%c    Removed chatbox and cleared message.",
+			"color:rgba(255, 0, 0, 0.5);",
+		);
+	}
 }
