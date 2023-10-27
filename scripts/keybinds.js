@@ -1,5 +1,5 @@
 // Variables
-let numberCount = window.numberCount; // Number count = NC
+numberCount = window.numberCount; // Number count = NC
 
 // Elements
 const settingsToggle = document.getElementById("settingsToggle");
@@ -31,4 +31,5 @@ document.addEventListener("keydown", function (event) {
 // Settings toggle
 settingsToggle.addEventListener("dblclick", function () {
 	settings.classList.toggle("hidden");
+	console.log("Double clicked.");
 });

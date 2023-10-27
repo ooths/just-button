@@ -23,11 +23,18 @@
 			href="styles/toolbox.css"
 			rel="stylesheet" />
 		<link
-			href="styles/toggleStyles.css"
+			href="styles/toggleableStyles.css"
 			rel="stylesheet" />
 		<link
 			href="styles/settings.css"
 			rel="stylesheet" />
+		<link
+			href="styles/toggleableStyles.css"
+			rel="stylesheet" />
+		<link
+			href="styles/toggleSwitch.css"
+			rel="stylesheet" />
+		<link href="styles/lightDarkMode.css" rel="stylesheet" />
 	</head>
 	<body>
 		<div
@@ -132,16 +139,16 @@
 			id="settings">
 			<h1 class="settingsTitle">Settings</h1>
 			<div
-				class="lightDarkContainer"
-				id="lightDarkContainer">
-				<div class="lightDarkLabel">Light / Dark Mode</div>
-				<div
-					class="lightDarkToggle"
-					id="lightDarkToggle">
-					<label class="toggle">
-						<input type="checkbox" />
-						<span class="slider round"></span>
-					</label>
+				class="settingsContent"
+				id="settingsContent">
+				<div class="lightDarkContainer">
+					<div class="lightDarkLabel">Light / Dark Mode</div>
+					<div class="lightDarkToggle">
+						<input
+							type="checkbox"
+							id="switch" />
+						<label for="switch"></label>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -149,5 +156,6 @@
 		<script src="scripts/onClickScript.js"></script>
 		<script src="scripts/keybinds.js"></script>
 		<script src="scripts/toolbox.js"></script>
+		<script src="scripts/settings.js"></script>
 	</body>
 </html>
