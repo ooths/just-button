@@ -8,7 +8,8 @@ const taskbar = document.getElementById("taskbar");
 const gridButton = document.getElementById("gridButton");
 const piechartButton = document.getElementById("piechartButton");
 const blockButton = document.getElementById("blockButton");
-const chatboxContainer = document.getElementById("chatboxContainer");
+// const chatboxContainer = document.getElementById("chatboxContainer");
+const chatboxContainer = $("#chatboxContainer");
 const chatboxTriangle = document.getElementById("chatboxTriangle");
 const chatboxMessage = document.getElementById("chatboxMessage");
 const toolbox = document.getElementById("toolbox");
@@ -41,7 +42,7 @@ function updateCounter() {
 
 // Removes chatbox and clears message after first click
 function firstNC() {
-	chatboxContainer.classList.add("hidden");
+	chatboxContainer.hide();
 	chatboxTriangle.classList.add("hidden");
 	chatboxMessage.innerHTML = "";
 }

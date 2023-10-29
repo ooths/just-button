@@ -1,6 +1,8 @@
 // Elements
-const settingsToggle = document.getElementById("settingsToggle");
+// const settingsToggle = document.getElementById("settingsToggle");
 const settings = document.getElementById("settings");
+const settingsToggle = $("#settingsToggle");
+
 
 // Up arrow keybind
 document.addEventListener("keydown", function (event) {
@@ -26,7 +28,12 @@ document.addEventListener("keydown", function (event) {
 });
 
 // Settings toggle
-settingsToggle.addEventListener("dblclick", function () {
+settingsToggle.dblclick(function(){
 	settings.classList.toggle("hidden");
 	console.log("Double clicked.");
 });
+
+// settingsToggle.addEventListener("dblclick", function () {
+// 	settings.classList.toggle("hidden");
+// 	console.log("Double clicked.");
+// });
