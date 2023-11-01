@@ -1,50 +1,34 @@
 // Determines the number count and sets the appropriate interface
 function interfaceControl() {
   if (numberCount >= 100) {
-    TASKBAR.hide();
+    TASKBAR.removeClass("hidden");
   }
-
   if (numberCount >= 200) {
-    BUTTON1.hide();
+    BUTTON1.removeClass("hidden");
   }
-
   if (numberCount >= 300) {
-    BUTTON2.hide();
+    BUTTON2.removeClass("hidden");
   }
-
   if (numberCount >= 400) {
-    BUTTON3.hide();
+    BUTTON3.removeClass("hidden");
   }
-
   if (numberCount >= 500) {
-    TOOLBOX.hide();
+    TOOLBOX.removeClass("hidden");
   }
-
   if (numberCount === 600) {
     CHATBOXCONTAINER.show();
   }
 
   // Console messages
-  if (numberCount === 100) {
-    console.log("%cThe taskbar appeared.", "color:#3b82f7");
-  }
+  let logs = {
+    100: "The taskbar appeared.",
+    200: "The first button appeared.",
+    300: "The second button appeared.",
+    400: "The third button appeared.",
+    500: "The toolbox appeared.",
+  };
 
-  if (numberCount === 200) {
-    console.log("%cThe first button appeared.", "color:#3b82f7");
-  }
-
-  if (numberCount === 300) {
-    console.log("%cThe second button appeared.", "color:#3b82f7");
-  }
-
-  if (numberCount === 400) {
-    console.log("%cThe third button appeared.", "color:#3b82f7");
-  }
-
-  if (numberCount === 500) {
-    console.log("%cThe toolbox appeared.", "color:#3b82f7");
+  if (logs[numberCount]) {
+    console.log(`%c${logs[numberCount]}`, "color:#3b82f7");
   }
 }
-
-// Runs the function whenever Herold is clicked
-HEROLD.click(interfaceControl);

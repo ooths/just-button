@@ -18,7 +18,7 @@ if (window.numberCount === 0) {
 
 // Removes the chatbox and clears message
 function firstClick() {
-  if (window.numberCount === 1) {
+  if (window.numberCount < 100) {
     CHATBOXCONTAINER.hide();
     TEXTCONTENT.html("");
   }

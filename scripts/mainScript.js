@@ -12,9 +12,11 @@ const BUTTON1 = $("#button1");
 const BUTTON2 = $("#button2");
 const BUTTON3 = $("#button3");
 
+// Runs the functions on Herold click
 HEROLD.click(function () {
   window.numberCount += 1;
   COUNTER.html(window.numberCount);
   messageControl();
+  interfaceControl();
   firstClick();
 });
