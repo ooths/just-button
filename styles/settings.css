@@ -1,6 +1,14 @@
-.settings {
-  background-color: #1c1c1e;
-  color: white;
+#toggleSettings {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 20vh;
+}
+
+#settings {
+  background-image: var(--settings);
   width: 300px;
   height: fit-content;
   position: absolute;
@@ -11,24 +19,24 @@
   border-radius: 10px;
 }
 
-.settingsTitle {
-  font-size: 20px;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.lightDarkContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
 @media only screen and (max-width: 1500px) {
-  .settings {
+  #settings {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 350px;
   }
+}
+
+#settingsTitle {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.setting {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }

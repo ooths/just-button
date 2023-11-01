@@ -1,0 +1,102 @@
+#stream {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  height: 100vh;
+  width: 100vw;
+}
+
+#upperStream {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  bottom: calc(50vh + 65px);
+  position: absolute;
+}
+
+#chatboxBody {
+  border-radius: 10px;
+  width: 200px;
+  height: 60px;
+}
+
+#chatboxText {
+  padding: 10px;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+#textContent {
+  text-align: center;
+  white-space: normal;
+  word-wrap: break-word;
+  width: 100%;
+}
+
+#chatboxTail {
+  width: 50px;
+  height: 20px;
+  clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
+  margin: auto;
+}
+
+#middleStream {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  justify-content: center;
+  height: 100vh;
+  position: absolute;
+}
+
+#herold,
+#counter {
+  width: 60px;
+  height: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+
+#herold {
+  color: #3b82f7;
+}
+
+#lowerStream {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  top: calc(50vh + 65px);
+  position: absolute;
+}
+
+#taskbar,
+#toolbox {
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#taskbar {
+  width: 250px;
+  border-radius: 40px;
+}
+
+#taskbar svg {
+  vertical-align: middle;
+}
+
+#toolbox {
+  width: 500px;
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}

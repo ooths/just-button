@@ -1,161 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0" />
-		<title>Just Button</title>
-		<!-- Stylesheets -->
-		<link
-			href="styles/mainStyles.css"
-			rel="stylesheet" />
-		<link
-			href="styles/counterAndHerold.css"
-			rel="stylesheet" />
-		<link
-			href="styles/taskbar.css"
-			rel="stylesheet" />
-		<link
-			href="styles/chatbox.css"
-			rel="stylesheet" />
-		<link
-			href="styles/toolbox.css"
-			rel="stylesheet" />
-		<link
-			href="styles/toggleableStyles.css"
-			rel="stylesheet" />
-		<link 
-			href="styles/settings.css"
-			rel="stylesheet" />
-		<link
-			href="styles/toggleableStyles.css"
-			rel="stylesheet" />
-		<link
-			href="styles/toggleSwitch.css"
-			rel="stylesheet" />
-		<link href="styles/lightDarkMode.css" rel="stylesheet" />
-	</head>
-	<body>
-		<div
-			class="settingsToggle"
-			id="settingsToggle">
-		</div>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<div
-			class="container"
-			id="container">
-			<!-- Chatbox -->
-			<div
-				class="chatboxContainer"
-				id="chatboxContainer">
-				<div
-					class="chatboxMessage"
-					id="chatboxMessage"></div>
-			</div>
-			<div
-				class="chatboxTriangle"
-				id="chatboxTriangle">
-			</div>
+    <!-- Links/jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-			<!-- Herold and Counter -->
-			<div class="counterAndHerold">
-				<button
-					id="herold"
-					class="herold resetButtonStyles"
-					>Button</button
-				>
-				<p
-					id="counter"
-					class="counter"
-					>0</p
-				>
-			</div>
+    <link href="styles/mainStyles.css" rel="stylesheet" />
+    <link href="styles/settings.css" rel="stylesheet" />
+    <link href="styles/lightDarkMode.css" rel="stylesheet" />
+    <link href="styles/styleToggles.css" rel="stylesheet" />
+    <link href="styles/toggleSwitch.css" rel="stylesheet" />
+    <link href="styles/streams.css" rel="stylesheet" />
 
-			<!-- Taskbar -->
-			<div
-				id="taskbar"
-				class="taskbar hidden">
-				<!-- GRID BUTTON -->
-				<button
-					id="gridButton"
-					class="resetButtonStyles hidden">
-					<svg
-						fill="#555555"
-						xmlns="http://www.w3.org/2000/svg"
-						height="24"
-						viewBox="0 -960 960 960"
-						width="24">
-						<path
-							d="M200-200h80v-80h-80v80Zm160 0h80v-80h-80v80Zm160 0h80v-80h-80v80Zm160 0h80v-80h-80v80ZM200-680h80v-80h-80v80Zm0 160h80v-80h-80v80Zm0 160h80v-80h-80v80Zm160-320h80v-80h-80v80Zm0 160h80v-80h-80v80Zm0 160h80v-80h-80v80Zm160-320h80v-80h-80v80Zm0 160h80v-80h-80v80Zm0 160h80v-80h-80v80Zm160-320h80v-80h-80v80Zm0 160h80v-80h-80v80Zm0 160h80v-80h-80v80ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Z"></path>
-					</svg>
-				</button>
-				<!-- END OF GRID BUTTON -->
+    <title>Just Button</title>
+  </head>
 
-				<!-- LINE CHART BUTTON -->
-				<button
-					id="piechartButton"
-					class="resetButtonStyles hidden">
-					<svg
-						fill="#555555"
-						xmlns="http://www.w3.org/2000/svg"
-						height="24"
-						viewBox="0 -960 960 960"
-						width="24">
-						<path
-							d="M520-520h278q-15-110-91.5-186.5T520-798v278Zm-80 358v-636q-121 15-200.5 105.5T160-480q0 122 79.5 212.5T440-162Zm80 0q110-14 187-91t91-187H520v278Zm-40-318Zm0 400q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 155.5 31.5t127 86q54.5 54.5 86 127T880-480q0 82-31.5 155T763-197.5q-54 54.5-127 86T480-80Z" /></svg
-				></button>
-				<!-- END OF LINE CHART BUTTON -->
+  <body>
+    <!-- Settings Toggler-->
+    <div id="toggleSettings"></div>
 
-				<!-- BLOCK BUTTON -->
-				<button
-					id="blockButton"
-					class="resetButtonStyles hidden">
-					<svg
-						fill="#555555"
-						xmlns="http://www.w3.org/2000/svg"
-						height="24"
-						viewBox="0 0 24 24"
-						width="24">
-						<path
-							transform="translate(0.000000,24.000000) scale(0.100000,-0.100000)"
-							d="M117 204 c-4 -4 -7 -27 -7 -51 l0 -43 -41 0 -40 0 3 -37 3 -38 85 0 85 0 0 85 0 85 -40 3 c-23 2 -44 0 -48 -4z m73 -84 l0 -70 -70 0 c-63 0 -70 2 -70 20 0 17 7 20 40 20 l40 0 0 50 c0 49 1 50 30 50 l30 0 0 -70z"></path>
-					</svg>
-				</button>
-				<!-- END OF BLOCK BUTTON -->
-			</div>
+    <!-- UPPER STREAM -->
+    <div id="stream">
+      <div id="upperStream">
+        <!-- Chatbox -->
+        <div id="chatboxContainer">
+          <div id="chatboxBody">
+            <div id="chatboxText">
+              <span id="textContent"></span>
+            </div>
+          </div>
+          <div id="chatboxTail"></div>
+        </div>
+      </div>
 
-			<!-- Toolbox -->
-			<div
-				class="toolbox hidden"
-				id="toolbox"
-				>🧰
-			</div>
-		</div>
+      <!-- MIDDLE STREAM -->
+      <div id="middleStream">
+        <button id="herold" class="resetButtonStyles">Button</button>
+        <p id="counter">0</p>
+      </div>
 
-		<!-- Settings -->
-		<div
-			class="settings hidden"
-			id="settings">
-			<h1 class="settingsTitle">Settings</h1>
-			<div
-				class="settingsContent"
-				id="settingsContent">
-				<div class="lightDarkContainer">
-					<div class="lightDarkLabel">Light / Dark Mode</div>
-					<div class="lightDarkToggle">
-						<input
-							type="checkbox"
-							id="switch" />
-						<label for="switch"></label>
-					</div>
-				</div>
-			</div>
-		</div>
+      <!-- LOWER STREAM -->
+      <div id="lowerStream">
+        <!-- Taskbar -->
+        <div id="taskbar" class="hidden">
+          <button id="button1" class="resetButtonStyles hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24"
+              viewBox="0 -960 960 960"
+              width="24">
+              <path
+                d="M200-200h80v-80h-80v80Zm160 0h80v-80h-80v80Zm160 0h80v-80h-80v80Zm160 0h80v-80h-80v80ZM200-680h80v-80h-80v80Zm0 160h80v-80h-80v80Zm0 160h80v-80h-80v80Zm160-320h80v-80h-80v80Zm0 160h80v-80h-80v80Zm0 160h80v-80h-80v80Zm160-320h80v-80h-80v80Zm0 160h80v-80h-80v80Zm0 160h80v-80h-80v80Zm160-320h80v-80h-80v80Zm0 160h80v-80h-80v80Zm0 160h80v-80h-80v80ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Z"></path>
+            </svg>
+          </button>
+          <button id="button2" class="resetButtonStyles hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24"
+              viewBox="0 -960 960 960"
+              width="24">
+              <path
+                d="M520-520h278q-15-110-91.5-186.5T520-798v278Zm-80 358v-636q-121 15-200.5 105.5T160-480q0 122 79.5 212.5T440-162Zm80 0q110-14 187-91t91-187H520v278Zm-40-318Zm0 400q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 155.5 31.5t127 86q54.5 54.5 86 127T880-480q0 82-31.5 155T763-197.5q-54 54.5-127 86T480-80Z" />
+            </svg>
+          </button>
+          <button id="button3" class="resetButtonStyles hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24"
+              viewBox="0 0 24 24"
+              width="24">
+              <path
+                transform="translate(0.000000,24.000000) scale(0.100000,-0.100000)"
+                d="M117 204 c-4 -4 -7 -27 -7 -51 l0 -43 -41 0 -40 0 3 -37 3 -38 85 0 85 0 0 85 0 85 -40 3 c-23 2 -44 0 -48 -4z m73 -84 l0 -70 -70 0 c-63 0 -70 2 -70 20 0 17 7 20 40 20 l40 0 0 50 c0 49 1 50 30 50 l30 0 0 -70z"></path>
+            </svg>
+          </button>
+        </div>
 
-		<script src="scripts/onClickScript.js"></script>
-		<script src="scripts/keybinds.js"></script>
-		<script src="scripts/toolbox.js"></script>
-		<script src="scripts/settings.js"></script>
-	</body>
+        <!-- Toolbox -->
+        <div id="toolbox" class="hidden">
+          <button class="resetButtonStyles" id="toolboxButton">🛠️</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Settings -->
+    <div id="settings" class="hidden">
+      <h1 id="settingsTitle">Settings</h1>
+
+      <div class="setting">
+        <p id="setting1Text">Light/Dark Mode</p>
+        <input type="checkbox" class="switch" id="switch" />
+        <label for="switch"></label>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="scripts/mainScript.js"></script>
+    <script type="text/javascript" src="scripts/interfaceControl.js"></script>
+    <script type="text/javascript" src="scripts/keybinds.js"></script>
+    <script type="text/javascript" src="scripts/settings.js"></script>
+    <script type="text/javascript" src="scripts/chatbox.js"></script>
+    <script type="text/javascript" src="scripts/taskbar.js"></script>
+  </body>
 </html>

@@ -1,14 +1,57 @@
-.darkMode
-{
-    --background-color: black;
+/* Light Mode */
+[data-theme="light"] {
+  --bg-color: white;
+  --chatbox: #89898e;
+  --chatboxText: #d2d2e1;
+  --counter: #000000;
+  --taskbar: #d2d2e1;
+  --toolbox: #c2c2cb;
+  --settings: linear-gradient(to bottom, #898989, #c2c2c2);
+  --svg: #1c1c1e;
 }
 
-.lightMode
-{
-    --background-color: white;
+/* Dark Mode */
+[data-theme="dark"] {
+  --bg-color: black;
+  --chatbox: #89898e;
+  --chatboxText: #1c1c1e;
+  --counter: #ffffff;
+  --taskbar: #1b1b1d;
+  --toolbox: #2a2a2c;
+  --settings: linear-gradient(to bottom, #1b1b1d, #2a2a2c);
+  --svg: #d2d2e1;
 }
 
-body
-{
-    background: var(--background-color, black);
+body {
+  background-color: var(--bg-color);
+}
+
+#chatboxBody,
+#chatboxTail {
+  background-color: var(--chatbox);
+  color: var(--chatboxText);
+}
+
+#counter {
+  color: var(--counter);
+}
+
+#taskbar {
+  background-color: var(--taskbar);
+}
+
+#toolbox {
+  background-color: var(--toolbox);
+}
+
+#taskbar svg {
+  fill: var(--chatboxText);
+}
+
+[data-theme="dark"] #taskbar svg {
+  fill: black;
+}
+
+[data-theme="light"] #taskbar svg {
+  fill: white;
 }
