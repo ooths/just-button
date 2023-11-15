@@ -13,10 +13,10 @@ function interfaceControl() {
     BUTTON3.removeClass("hidden");
   }
   if (numberCount >= 500) {
-    TOOLBOX.removeClass("hidden");
+    CHATBOXCONTAINER.show();
   }
   if (numberCount === 600) {
-    CHATBOXCONTAINER.show();
+    TOOLBOX.removeClass("hidden");
   }
 
   // Console messages
