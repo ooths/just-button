@@ -11,6 +11,7 @@ const TOOLBOX = $("#toolbox");
 const BUTTON1 = $("#button1");
 const BUTTON2 = $("#button2");
 const BUTTON3 = $("#button3");
+const BODY = $("body");
 
 // Runs the functions on Herold click
 HEROLD.click(function () {

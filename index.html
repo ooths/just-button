@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/assets/favicon-32x32.png">
 
     <!-- Links/jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -13,6 +14,7 @@
     <link href="styles/styleToggles.css" rel="stylesheet" />
     <link href="styles/toggleSwitch.css" rel="stylesheet" />
     <link href="styles/streams.css" rel="stylesheet" />
+    <link href="styles/toolboxMenu.css" rel="stylesheet" />
 
     <title>Just Button</title>
   </head>
@@ -25,7 +27,7 @@
     <div id="stream">
       <div id="upperStream">
         <!-- Chatbox -->
-        <div id="chatboxContainer">
+        <div id="chatboxContainer" class="contentHideable">
           <div id="chatboxBody">
             <div id="chatboxText">
               <span id="textContent"></span>
@@ -44,7 +46,7 @@
       <!-- LOWER STREAM -->
       <div id="lowerStream">
         <!-- Taskbar -->
-        <div id="taskbar" class="hidden">
+        <div id="taskbar" class="hidden contentHideable">
           <button id="button1" class="resetButtonStyles hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +81,7 @@
         </div>
 
         <!-- Toolbox -->
-        <div id="toolbox" class="hidden">
+        <div id="toolbox" class="hidden contentHideable">
           <button class="resetButtonStyles" id="toolboxButton">🛠️</button>
         </div>
       </div>
@@ -96,12 +98,33 @@
       </div>
     </div>
 
+    <!-- Toolbox Menu -->
+    <div id="toolboxMenu" class="hidden">
+      <h1 id="toolboxMenuTitle">Toolbox</h1>
+
+      <div class="toolboxMenuContent">
+        <p>Feed toolbox:</p>
+        <button class="resetButtonStyles">-1</button>
+      </div>
+
+      <div class="toolboxMenuContent">
+        <p>Increase increments:</p>
+        <button class="resetButtonStyles">-500</button>
+      </div>
+
+      <div id="toolboxMenuStats">
+        <p>Player increments:</p>
+        <p>Toolbox increments:</p>
+      </div>
+    </div>
+
     <!-- Scripts -->
     <script type="text/javascript" src="scripts/mainScript.js"></script>
     <script type="text/javascript" src="scripts/interfaceControl.js"></script>
     <script type="text/javascript" src="scripts/keybinds.js"></script>
     <script type="text/javascript" src="scripts/settings.js"></script>
     <script type="text/javascript" src="scripts/chatbox.js"></script>
-    <script type="text/javascript" src="scripts/taskbar.js"></script>
+    <script type="text/javascript" src="scripts/taskbarButtons.js"></script>
+    <script type="text/javascript" src="scripts/toolboxMenu.js"></script>
   </body>
 </html>

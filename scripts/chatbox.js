@@ -26,9 +26,9 @@ function firstClick() {
 
 // Determines the number count and sets the appropriate message
 function messageControl() {
-  for (const key in MESSAGES) {
-    if (window.numberCount >= key) {
-      TEXTCONTENT.html(MESSAGES[key]);
+  for (const messagesKey in MESSAGES) {
+    if (window.numberCount >= messagesKey) {
+      TEXTCONTENT.html(MESSAGES[messagesKey]);
     }
   }
 }

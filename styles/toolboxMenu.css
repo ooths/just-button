@@ -1,0 +1,51 @@
+#toolboxMenu {
+    background-color: var(--menuBackground);
+    width: 300px;
+    height: fit-content;
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform: translate(-25%, -50%);
+    padding: 20px;
+    border-radius: 10px;
+}
+  
+@media only screen and (max-width: 1500px) {
+    #toolboxMenu {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 350px;
+    }
+  }
+  
+#toolboxMenuTitle {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+  
+.toolboxMenuContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    font-size: 15px;
+}
+
+#toolboxMenuStats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#toolboxMenu button {
+    background-color: var(--chatboxText);
+    width: 50px;
+    height: 25px;
+    border-radius: 10px;
+    border: 1px solid black;
+}

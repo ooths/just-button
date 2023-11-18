@@ -2,6 +2,8 @@
 TOGGLESETTINGS.on("dblclick", function () {
   SETTINGS.toggleClass("hidden");
   console.log("%cToggled settings.", "color:#3b82f7");
+  let settingsShown = !SETTINGS.hasClass("hidden");
+  BODY.toggleClass("hideContent", settingsShown);
 });
 
 // Light mode and dark mode switch

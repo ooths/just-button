@@ -1,3 +1,5 @@
+let loggingDone = {};
+
 // Determines the number count and sets the appropriate interface
 function interfaceControl() {
   if (numberCount >= 100) {
@@ -20,15 +22,20 @@ function interfaceControl() {
   }
 
   // Console messages
-  let logs = {
+  const LOGS = {
     100: "The taskbar appeared.",
     200: "The first button appeared.",
     300: "The second button appeared.",
     400: "The third button appeared.",
-    500: "The toolbox appeared.",
+    500: "The chatbox appeared.",
+    600: "The toolbox appeared.",
   };
 
-  if (logs[numberCount]) {
-    console.log(`%c${logs[numberCount]}`, "color:#3b82f7");
+  for (const LOGGEDKEY in LOGS) {
+    const THRESHOLD = parseInt(LOGGEDKEY);
+    if (numberCount >= THRESHOLD && !loggingDone[LOGGEDKEY]) {
+      console.log(`%c${LOGS[LOGGEDKEY]}`, "color:#3b82f7");
+      loggingDone[LOGGEDKEY] = true;
+    }
   }
 }
