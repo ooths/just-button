@@ -3,8 +3,8 @@ $(document).on("keydown", function (event) {
   switch (event.key) {
     // Increases number count by 25
     case "ArrowUp":
-      window.numberCount += 25;
-      COUNTER.html(window.numberCount);
+      numberCount += 25;
+      COUNTER.html(numberCount);
       interfaceControl();
       messageControl();
       firstClick();
@@ -13,8 +13,8 @@ $(document).on("keydown", function (event) {
 
     // Decreases number count by 25
     case "ArrowDown":
-      window.numberCount = Math.max(window.numberCount - 25, 0);
-      COUNTER.html(window.numberCount);
+      numberCount = Math.max(numberCount - 25, 0);
+      COUNTER.html(numberCount);
       interfaceControl();
       messageControl();
       firstClick();
@@ -24,9 +24,7 @@ $(document).on("keydown", function (event) {
     // Reloads page
     case "r":
       location.reload();
-      console.log(
-        "%cReloaded",
-        "color:#3b82f7")
+      console.log("%cReloaded", "color:#3b82f7");
       break;
   }
 });

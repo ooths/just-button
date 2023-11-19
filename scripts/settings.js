@@ -1,9 +1,10 @@
 // Double click to toggle settings
 TOGGLESETTINGS.on("dblclick", function () {
+  let settingsHidden = SETTINGS.hasClass("hidden");
   SETTINGS.toggleClass("hidden");
+  TOOLBOXMENU.addClass("hidden");
   console.log("%cToggled settings.", "color:#3b82f7");
-  let settingsShown = !SETTINGS.hasClass("hidden");
-  BODY.toggleClass("hideContent", settingsShown);
+  BODY.toggleClass("hideContent", settingsHidden);
 });
 
 // Light mode and dark mode switch
