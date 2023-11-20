@@ -12,13 +12,13 @@ const MESSAGES = {
   600: "What the hell?",
 };
 
-if (numberCount === 0) {
+if (window.numberCount === 0) {
   TEXTCONTENT.html("Double click the top of the screen to toggle settings.");
 }
 
 // Removes the chatbox and clears message
 function firstClick() {
-  if (numberCount < 100) {
+  if (window.numberCount < 100) {
     CHATBOXCONTAINER.hide();
     TEXTCONTENT.html("");
   }
@@ -27,7 +27,7 @@ function firstClick() {
 // Determines the number count and sets the appropriate message
 function messageControl() {
   for (const messagesKey in MESSAGES) {
-    if (numberCount >= messagesKey) {
+    if (window.numberCount >= messagesKey) {
       TEXTCONTENT.html(MESSAGES[messagesKey]);
     }
   }

@@ -18,7 +18,8 @@ Your aim is to reach the final number, which isn't possible by just clicking ove
 ### Currently working on...
 
 - Making the toolbox menu buttons functional
-- Fixing bugs
+- Adding x to the toolbox menu when the media query is enabled
+- Fixing bug
 
 ### After coding the whole game...
 
@@ -26,4 +27,4 @@ I plan to integrate Node.js for a better way of hiding and showing elements.
 
 ## Bugs
 
-None have come up.
+- Chatbox isn't showing up

@@ -2,22 +2,38 @@ let loggingDone = {};
 
 // Determines the number count and sets the appropriate interface
 function interfaceControl() {
-  if (numberCount >= 100) {
+  COUNTER.html(window.numberCount);
+  if (window.numberCount >= 100) {
     TASKBAR.removeClass("hidden");
+    BUTTON1.addClass("hidden");
+    BUTTON2.addClass("hidden");
+    BUTTON3.addClass("hidden");
+    CHATBOXCONTAINER.addClass("hidden");
+    TOOLBOX.addClass("hidden");
   }
-  if (numberCount >= 200) {
+  if (window.numberCount >= 200) {
     BUTTON1.removeClass("hidden");
+    BUTTON2.addClass("hidden");
+    BUTTON3.addClass("hidden");
+    CHATBOXCONTAINER.addClass("hidden");
+    TOOLBOX.addClass("hidden");
   }
-  if (numberCount >= 300) {
+  if (window.numberCount >= 300) {
     BUTTON2.removeClass("hidden");
+    BUTTON3.addClass("hidden");
+    CHATBOXCONTAINER.addClass("hidden");
+    TOOLBOX.addClass("hidden");
   }
-  if (numberCount >= 400) {
+  if (window.numberCount >= 400) {
     BUTTON3.removeClass("hidden");
+    CHATBOXCONTAINER.addClass("hidden");
+    TOOLBOX.addClass("hidden");
   }
-  if (numberCount >= 500) {
+  if (window.numberCount >= 500) {
     CHATBOXCONTAINER.show();
+    TOOLBOX.addClass("hidden");
   }
-  if (numberCount === 600) {
+  if (window.numberCount >= 600) {
     TOOLBOX.removeClass("hidden");
   }
 
@@ -33,7 +49,7 @@ function interfaceControl() {
 
   for (const LOGGEDKEY in LOGS) {
     const THRESHOLD = parseInt(LOGGEDKEY);
-    if (numberCount >= THRESHOLD && !loggingDone[LOGGEDKEY]) {
+    if (window.numberCount >= THRESHOLD && !loggingDone[LOGGEDKEY]) {
       console.log(`%c${LOGS[LOGGEDKEY]}`, "color:#3b82f7");
       loggingDone[LOGGEDKEY] = true;
     }

@@ -1,5 +1,5 @@
 // Variables
-let numberCount = 0;
+window.numberCount = 0;
 const CHATBOXCONTAINER = $("#chatboxContainer");
 const TEXTCONTENT = $("#textContent");
 const TASKBAR = $("#taskbar");
@@ -17,11 +17,11 @@ const FEEDTOOLBOX = $("#feedToolbox");
 const INCREASEINCREMENTS = $("#increaseIncrements");
 const PLAYERINCREMENTSTEXT = $("#playerIncrementsText");
 const TOOLBOXINCREMENTSTEXT = $("#toolboxIncrementsText");
+const INCREASEINCREMENTSBUTTONTEXT = $("#increaseIncrementsButtonText");
 
 // Runs the functions on Herold click
 HEROLD.click(function () {
-  numberCount += playerIncrements;
-  COUNTER.html(numberCount);
+  window.numberCount += playerIncrements;
   messageControl();
   interfaceControl();
   firstClick();
