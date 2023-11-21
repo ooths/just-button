@@ -5,8 +5,8 @@ function interfaceControl() {
   COUNTER.html(window.numberCount);
 
   // Common actions for each range
-  [BUTTON1, BUTTON2, BUTTON3, CHATBOXCONTAINER, TOOLBOX].forEach((element) =>
-    element.addClass("hidden")
+  [BUTTON1, BUTTON2, BUTTON3, CHATBOXCONTAINER, TOOLBOX, TASKBAR].forEach(
+    (element) => element.addClass("hidden")
   );
 
   if (window.numberCount >= 600) {
@@ -14,6 +14,7 @@ function interfaceControl() {
   }
 
   if (window.numberCount >= 500) {
+    CHATBOXCONTAINER.removeClass("hidden");
     CHATBOXCONTAINER.show();
   }
 
