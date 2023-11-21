@@ -45,6 +45,9 @@ INCREASEINCREMENTS.click(function () {
     PLAYERINCREMENTSTEXT.html(
       `(${currentPlayerIncrementsUpgrade}) Player increments: ${playerIncrements}`
     );
+    if (window.numberCount <= 599) {
+      TOOLBOXMENU.addClass("hidden");
+    }
   } else {
     // If number count is insufficient
     if (window.numberCount < 501) {
