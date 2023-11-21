@@ -9,8 +9,8 @@ TOOLBOX.click(function () {
   let toolboxMenuHidden = TOOLBOXMENU.hasClass("hidden");
   TOOLBOXMENU.toggleClass("hidden");
   SETTINGS.addClass("hidden");
-  console.log("%cToggled toolbox menu.", "color:#3b82f7");
   BODY.toggleClass("hideContent", toolboxMenuHidden);
+  console.log("%cToggled toolbox menu.", "color:#3b82f7");
 });
 
 // Makes close button functional

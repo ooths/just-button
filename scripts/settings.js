@@ -7,6 +7,12 @@ TOGGLESETTINGS.on("dblclick", function () {
   BODY.toggleClass("hideContent", settingsHidden);
 });
 
+// Makes close button functional
+SETTINGSCLOSEBUTTON.click(function () {
+  SETTINGS.addClass("hidden");
+  BODY.removeClass("hideContent");
+});
+
 // Light mode and dark mode switch
 $(".switch").on("change", function () {
   const CURRENTTHEME = $("html").attr("data-theme");

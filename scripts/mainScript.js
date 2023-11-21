@@ -19,6 +19,7 @@ const PLAYERINCREMENTSTEXT = $("#playerIncrementsText");
 const TOOLBOXINCREMENTSTEXT = $("#toolboxIncrementsText");
 const INCREASEINCREMENTSBUTTONTEXT = $("#increaseIncrementsButtonText");
 const TOOLBOXMENUCLOSEBUTTON = $("#toolboxMenuCloseButton");
+const SETTINGSCLOSEBUTTON = $("#settingsCloseButton");
 
 // Runs the functions on Herold click
 HEROLD.click(function () {
