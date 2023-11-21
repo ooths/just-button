@@ -17,7 +17,6 @@ Your aim is to reach the final number, which isn't possible by just clicking ove
 
 ### Currently working on...
 
-- Making the toolbox menu buttons functional
 - Adding x to the toolbox menu when the media query is enabled
 - Fixing bug
 

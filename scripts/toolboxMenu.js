@@ -15,14 +15,11 @@ TOOLBOX.click(function () {
 
 // Increase toolbox increments
 FEEDTOOLBOX.click(function () {
-  if (playerIncrements > 1) {
+  if (window.numberCount > 1) {
     toolboxIncrements += 1;
-    playerIncrements -= 1;
+    window.numberCount -= 1;
     interfaceControl();
-    TOOLBOXINCREMENTSTEXT.html(`Player increments: ${toolboxIncrements}`);
-    PLAYERINCREMENTSTEXT.html(
-      `(${currentPlayerIncrementsUpgrade}) Player increments: ${playerIncrements}`
-    );
+    TOOLBOXINCREMENTSTEXT.html(`Toolbox increments: ${toolboxIncrements}`);
   } else {
     console.log(
       "%cYou need at least 2 increments to feed the toolbox.",
@@ -44,7 +41,7 @@ INCREASEINCREMENTS.click(function () {
   } else {
     if (window.numberCount < 501) {
       console.log(
-        "%cYou need at least 501 increments to increase player increments.",
+        "%cThe button needs at least 501 numbers to increase player increments.",
         "color:#3b82f7"
       );
     } else {
