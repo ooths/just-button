@@ -42,10 +42,16 @@
     font-weight: bold;
 }
 
-#toolboxMenu button {
+#toolboxMenu #increaseIncrements, #toolboxMenu #feedToolbox {
     background-color: var(--chatboxText);
     width: 50px;
     height: 25px;
     border-radius: 10px;
     border: 1px solid black;
+}
+
+#toolboxMenuCloseButton {
+    display: flex;
+    position: absolute;
+    right: 25px;
 }

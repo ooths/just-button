@@ -13,6 +13,12 @@ TOOLBOX.click(function () {
   BODY.toggleClass("hideContent", toolboxMenuHidden);
 });
 
+// Makes close button functional
+TOOLBOXMENUCLOSEBUTTON.click(function () {
+  TOOLBOXMENU.addClass("hidden");
+  BODY.removeClass("hideContent");
+});
+
 // Increase toolbox increments
 FEEDTOOLBOX.click(function () {
   if (window.numberCount > 1) {
