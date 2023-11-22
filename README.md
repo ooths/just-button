@@ -19,7 +19,7 @@ Your aim is to reach the final number, which isn't possible by just clicking ove
 
 ### Currently working on...
 
-- Progressing
+- Need to move the key and value in toolboxMenu.js depending on how many upgrades you have
 
 ### After coding the whole game...
 

@@ -1,22 +1,45 @@
 let toolboxIncrements = 0;
 let playerIncrements = 1;
 
+let toolboxMenuOpen = false;
+let toolboxMenuOpenCount = 0;
+
 let currentPlayerIncrementsUpgrade = 0;
 let maxPlayerIncrementsUpgrade = 10;
 
-// Press the toolbox button to toggle the toolbox menu
+// Press the toolbox button to open/close the toolbox menu
 TOOLBOX.click(function () {
-  let toolboxMenuHidden = TOOLBOXMENU.hasClass("hidden");
-  TOOLBOXMENU.toggleClass("hidden");
-  SETTINGS.addClass("hidden");
-  BODY.toggleClass("hideContent", toolboxMenuHidden);
-  console.log("%cToggled toolbox menu.", "color:#3b82f7");
+  if (toolboxMenuOpen) {
+    closeToolbox();
+
+    return;
+  }
+  openToolbox();
 });
+
+function openToolbox() {
+  toolboxMenuOpen = true;
+  toolboxMenuOpenCount += 1;
+
+  TOOLBOXMENU.removeClass("hidden");
+  SETTINGS.addClass("hidden");
+  BODY.addClass("hideContent");
+  console.log("%Opened toolbox menu.", "color:#3b82f7");
+  messageControl();
+}
+
+function closeToolbox() {
+  toolboxMenuOpen = false;
+
+  TOOLBOXMENU.addClass("hidden");
+  BODY.removeClass("hideContent");
+  console.log("%Closed toolbox menu.", "color:#3b82f7");
+  messageControl();
+}
 
 // Makes close button functional
 TOOLBOXMENUCLOSEBUTTON.click(function () {
-  TOOLBOXMENU.addClass("hidden");
-  BODY.removeClass("hideContent");
+  closeToolbox();
 });
 
 // Increase toolbox increments
@@ -38,7 +61,7 @@ FEEDTOOLBOX.click(function () {
 INCREASEINCREMENTS.click(function () {
   // Check if the number count is sufficient and the maximum upgrade hasn't been reached
   if (currentPlayerIncrementsUpgrade < 10 && window.numberCount >= 501) {
-    playerIncrements += 10;
+    playerIncrements += 1;
     window.numberCount -= 500;
     currentPlayerIncrementsUpgrade += 1;
     interfaceControl();
