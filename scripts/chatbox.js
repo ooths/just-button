@@ -26,20 +26,22 @@ const MESSAGES = {
   740: "Were there mysteries inside?",
   750: "There were.",
   760: "That's cool.",
+  770: "Wait, what?",
+  780: "Have we met before?",
+  790: "So that means...",
+  800: "Time is cynical.",
+  810: "Or...",
+  820: "That the toolbox can mess with the fabric of time.",
+  830: "Is time relative?",
+  840: "Nah, what idiot came up with that kind of idea?",
+  850: "I know what time is.",
+  860: "I can keep track, see?",
+};
+
+const UPDATEDMESSAGES = {
   770: "An upgrade?",
   780: "Sounds like you should buy it.",
   790: "Like, pretty sure that's the point of all this.",
-  800: "Wait, what?",
-  810: "Have we met before?",
-  820: "So that means...",
-  830: "Time is cynical.",
-  840: "Or...",
-  850: "That the toolbox can mess with the fabric of time.",
-  860: "Is time relative?",
-  870: "Nah, what idiot came up with that kind of idea?",
-  880: "I know what time is.",
-  890: "I can keep track, see?",
-  
 };
 
 if (window.numberCount === 0) {
@@ -56,6 +58,19 @@ function firstClick() {
 
 // Determines the number count and sets the appropriate message
 function messageControl() {
+  if (
+    window.numberCount > 769 &&
+    window.numberCount < 800 &&
+    toolboxMenuOpenCount === 1
+  ) {
+    for (const UPDATEDMESSAGESKEY in MESSAGES) {
+      if (window.numberCount >= UPDATEDMESSAGESKEY) {
+        TEXTCONTENT.html(UPDATEDMESSAGES[UPDATEDMESSAGESKEY]);
+      }
+    }
+    return;
+  }
+
   if (window.numberCount > 729 && !toolboxMenuOpenCount) {
     TEXTCONTENT.html("");
 
@@ -68,9 +83,9 @@ function messageControl() {
     return;
   }
 
-  for (const messagesKey in MESSAGES) {
-    if (window.numberCount >= messagesKey) {
-      TEXTCONTENT.html(MESSAGES[messagesKey]);
+  for (const MESSAGESKEY in MESSAGES) {
+    if (window.numberCount >= MESSAGESKEY) {
+      TEXTCONTENT.html(MESSAGES[MESSAGESKEY]);
     }
   }
 }

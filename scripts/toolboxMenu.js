@@ -24,7 +24,7 @@ function openToolbox() {
   TOOLBOXMENU.removeClass("hidden");
   SETTINGS.addClass("hidden");
   BODY.addClass("hideContent");
-  console.log("%Opened toolbox menu.", "color:#3b82f7");
+  console.log("%cOpened toolbox menu.", "color:#3b82f7");
   messageControl();
 }
 
